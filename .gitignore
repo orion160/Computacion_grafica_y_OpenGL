@@ -1,0 +1,6 @@
+# Visual studio project file
+.vs
+
+# Cmake build dirs
+out/
+build/
