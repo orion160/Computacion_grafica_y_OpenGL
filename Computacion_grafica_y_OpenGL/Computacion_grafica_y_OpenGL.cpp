@@ -25,11 +25,18 @@ int main()
 
 	glfwMakeContextCurrent(window);
 
-	while (!glfwSetWindowShouldClose())
+	if (gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
+	{
+		glfwTerminate();
+		std::cout << "Could not initialize GLAD" << std::endl;
+		return -1;
+	}
+
+	while (!glfwWindowShouldClose(window))
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glfwSwapBuffers();
+		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
