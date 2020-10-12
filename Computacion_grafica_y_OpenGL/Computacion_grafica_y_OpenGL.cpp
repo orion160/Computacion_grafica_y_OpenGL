@@ -25,7 +25,7 @@ int main()
 
 	glfwMakeContextCurrent(window);
 
-	if (gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
+	if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
 	{
 		glfwTerminate();
 		std::cout << "Could not initialize GLAD" << std::endl;
