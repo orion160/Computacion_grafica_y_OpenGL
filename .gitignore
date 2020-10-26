@@ -4,3 +4,4 @@
 # Cmake build dirs
 out/
 build/
+/CMakeSettings.json
